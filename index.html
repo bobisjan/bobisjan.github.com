@@ -4,82 +4,65 @@
     <meta charset="utf-8">
     <title>Jan Bobisud</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My personal page">
+    <meta name="description" content="Personal page hosted by GitHub Pages">
     <meta name="author" content="Jan Bobisud">
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
-
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 700px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-        margin-bottom: 32px;
-      }
-      .jumbotron .lead {
-          margin-bottom: 32px;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet" media="screen">
 
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
     <![endif]-->
   </head>
 
   <body>
-    <div class="container-narrow">
-      <hr>
-
+    <div class="container">
       <div class="jumbotron">
         <h1>Jan Bobisud</h1>
-        <p class="lead"><em>A master's degree student</em></p>
-        <address>
-          <strong>Software Engineering</strong><br>
-          <p>Open Informatics<br>
-          Faculty of Electrical Engineering<br>
-          Czech Technical University in Prague</p>
-        </address>
       </div>
 
-      <hr>
-      
-      <footer>
-          <a href="mailto:bobisjan@fel.cvut.cz">bobisjan@fel.cvut.cz</a>
-      </footer>
+      <div class="row marketing">
+        <div class="col-md-6">
+          <div class="media">
+            <a class="pull-left" href="http://fel.cvut.cz">
+              <img src="images/cvut.jpg" alt="CTU" class="media-object img-responsive img-circle">
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading">Student</h4>
+              <p><a href="mailto:bobisjan@fel.cvut.cz">bobisjan@fel.cvut.cz</a></p>
+            </div>
+          </div>
+          <br>
+          <address>
+            <strong>Software Engineering</strong>
+            <p>Open Informatics<br>
+            Faculty of Electrical Engineering<br>
+            Czech Technical University in Prague</p>
+          </address>
+        </div>
+        <div class="col-md-6">
+          <div class="media">
+            <a class="pull-left" href="http://cz.capgemini.com" target="_blank">
+              <img src="images/capgemini.jpg" alt="Capgemini" class="media-object img-responsive img-circle">
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading">Junior Software Delevoper</h4>
+              <p><a href="mailto:jan.bobisud@capgemini.com">jan.bobisud@capgemini.com</a></p>
+            </div>
+          </div>
+          <br>
+          <address>
+            <strong>Capgemini Czech Republic s.r.o.</strong>
+            <p>Evropska 2588/33a<br>
+            160 00 Praha<br>
+            Czech Republic</p>
+          </address>
+        </div>
+      </div>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+    <script src="//code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
     <!-- Google Analytics -->
