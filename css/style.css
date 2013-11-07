@@ -32,7 +32,7 @@ footer {
   border-top: 1px solid #e5e5e5;
 }
 
-footer .info {
+footer .info, footer .copyright {
   padding: 10px 15px;
 }
 
