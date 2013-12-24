@@ -28,8 +28,9 @@
                 <small>2013 | Jan Bobisud from Prague</small>
               </p>
               <ul class="nav nav-pills pull-right">
-                <li><a href="https://github.com/bobisjan/" target="_blank">GitHub</a></li>
-                <li><a href="http://cz.linkedin.com/pub/jan-bobisud/76/802/273/" target="_blank">LinkedIn</a></li>
+              {{#each links}}
+                <li><a {{bind-attr href=url}} target="_blank">{{title}}</a></li>
+              {{/each}}
               </ul>
             </div>
           </div>
