@@ -17,76 +17,66 @@
   </head>
 
   <body>
-    <div class="container">
+    <script type="text/x-handlebars">
+      <div class="container">
+        {{outlet}}
+      
+        <footer>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="info text-muted pull-left">
+                <small>{{year}} | {{name}} from {{city}}</small>
+              </p>
+              <ul class="nav nav-pills pull-right">
+              {{#each links}}
+                <li><a {{bind-attr href=url}} target="_blank">{{title}}</a></li>
+              {{/each}}
+              </ul>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <p class="copyright text-muted">
+                <small>CTU logo &copy; {{year}} Czech Technical University in Prague<br>
+                       Capgemini logo &copy; {{year}} Capgemini</small>
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </script>
+    
+    <script type="text/x-handlebars" id="index">
       <div class="jumbotron">
-        <h1>Jan Bobisud</h1>
+        <h1>{{name}}</h1>
       </div>
 
       <div class="row marketing">
+        {{#each profiles}}
         <div class="col-sm-6 col-md-6">
           <div class="media">
-            <a class="pull-left" href="http://fel.cvut.cz">
-              <img src="images/cvut.jpg" alt="CTU" class="media-object img-responsive">
+            <a class="pull-left" {{bind-attr href=url}}>
+              <img {{bind-attr src=logo}} class="media-object img-responsive">
             </a>
             <div class="media-body">
-              <h4 class="media-heading">Master's Student</h4>
-              <p><a href="mailto:bobisjan@fel.cvut.cz">bobisjan@fel.cvut.cz</a></p>
+              <h4 class="media-heading">{{title}}</h4>
+              <p>{{mail-to email}}</p>
             </div>
           </div>
           <br>
-          <address class="well well-sm">
-            <strong>Software Engineering</strong>
-            <p>Open Informatics<br>
-            Faculty of Electrical Engineering<br>
-            Czech Technical University in Prague</p>
-          </address>
+          <address class="well well-sm">{{markdown contact}}</address>
         </div>
-        <div class="col-sm-6 col-md-6">
-          <div class="media">
-            <a class="pull-left" href="http://cz.capgemini.com" target="_blank">
-              <img src="images/capgemini.jpg" alt="Capgemini" class="media-object img-responsive img-circle">
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">Junior Software Engineer</h4>
-              <p><a href="mailto:jan.bobisud@capgemini.com">jan.bobisud@capgemini.com</a></p>
-            </div>
-          </div>
-          <br>
-          <address class="well well-sm">
-            <strong>Capgemini Czech Republic s.r.o.</strong>
-            <p>Evropska 2588/33a<br>
-            160 00 Praha<br>
-            Czech Republic</p>
-          </address>
-        </div>
+        {{/each}}        
       </div>
-
-      <footer>
-        <div class="row">
-          <div class="col-md-12">
-            <p class="info text-muted pull-left">
-              <small>2013 | Jan Bobisud from Prague</small>
-            </p>
-            <ul class="nav nav-pills pull-right">
-              <li><a href="https://github.com/bobisjan/" target="_blank">GitHub</a></li>
-              <li><a href="http://cz.linkedin.com/pub/jan-bobisud/76/802/273/" target="_blank">LinkedIn</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-md-12">
-            <p class="copyright text-muted">
-              <small>CTU logo &copy; 2013 Czech Technical University in Prague<br>
-                     Capgemini logo &copy; 2013 Capgemini</small>
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
-
+    </script>
+    
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+    <script src="js/libs/handlebars-1.1.2.js"></script>
+    <script src="js/libs/ember-1.2.0.js"></script>
+    <script src="js/app.js"></script>
     
     <!-- Google Analytics -->
     <script type="text/javascript">
