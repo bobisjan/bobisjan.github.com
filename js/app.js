@@ -1,27 +1,31 @@
 
 App = Ember.Application.create();
 
-var links = [{
-  title: "GitHub",
-  url: "https://github.com/bobisjan/"
-}, {
-  title: "LinkedIn",
-  url: "http://cz.linkedin.com/pub/jan-bobisud/76/802/273/"
-}];
-
-var profiles = [{
-  title: "Master's Student",
-  email: "bobisjan@fel.cvut.cz",
-  url: "http://fel.cvut.cz",
-  logo: "images/cvut.jpg",
-  contact: "**Software Engineering**<br>Open Informatics<br>Faculty of Electrical Engineering<br>Czech Technical University in Prague"
-}, {
-  title: "Junior Software Engineer",
-  email: "jan.bobisud@capgemini.com",
-  url: "http://cz.capgemini.com",
-  logo: "images/capgemini.jpg",
-  contact: "**Capgemini Czech Republic s.r.o.**<br>Evropska 2588/33a<br>160 00 Praha<br>Czech Republic"
-}]
+var model = {
+  name: "Jan Bobisud",
+  email: "me@bobisjan.com",
+  city: "Prague",
+  profiles: [{
+    title: "Master's Student",
+    email: "bobisjan@fel.cvut.cz",
+    url: "http://fel.cvut.cz",
+    logo: "images/cvut.jpg",
+    contact: "**Software Engineering**<br>Open Informatics<br>Faculty of Electrical Engineering<br>Czech Technical University in Prague"
+  }, {
+    title: "Junior Software Engineer",
+    email: "jan.bobisud@capgemini.com",
+    url: "http://cz.capgemini.com",
+    logo: "images/capgemini.jpg",
+    contact: "**Capgemini Czech Republic s.r.o.**<br>Evropska 2588/33a<br>160 00 Praha<br>Czech Republic"
+  }],
+  links: [{
+    title: "GitHub",
+    url: "https://github.com/bobisjan/"
+  }, {
+    title: "LinkedIn",
+    url: "http://cz.linkedin.com/pub/jan-bobisud/76/802/273/"
+  }]
+};
 
 Ember.Handlebars.helper('mail-to', function(value, options) {
   var escaped = Handlebars.Utils.escapeExpression(value);
@@ -39,17 +43,13 @@ App.Router.map(function() {
 });
 
 App.ApplicationRoute = Em.Route.extend({
-  setupController: function(controller, model) {
-    controller.set('links', links);
+  model: function() {
+    return model;
   }
 });
 
 App.IndexRoute = Em.Route.extend({
   model: function() {
-    return profiles;
+    return model;
   }
-});
-
-App.ApplicationController = Em.Controller.extend({
-  links: []
 });
