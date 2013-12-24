@@ -1,6 +1,31 @@
 
 App = Ember.Application.create();
 
+var profiles = [{
+  title: "Master's Student",
+  email: "bobisjan@fel.cvut.cz",
+  url: "http://fel.cvut.cz",
+  logo: "images/cvut.jpg",
+  contact: "**Software Engineering**<br>Open Informatics<br>Faculty of Electrical Engineering<br>Czech Technical University in Prague"
+}, {
+  title: "Junior Software Engineer",
+  email: "jan.bobisud@capgemini.com",
+  url: "http://cz.capgemini.com",
+  logo: "images/capgemini.jpg",
+  contact: "**Capgemini Czech Republic s.r.o.**<br>Evropska 2588/33a<br>160 00 Praha<br>Czech Republic"
+}]
+
+Ember.Handlebars.helper('mail-to', function(value, options) {
+  var escaped = Handlebars.Utils.escapeExpression(value);
+  return new Handlebars.SafeString('<a href="mailto:' + escaped + '">' + escaped + '</a>');
+});
+
+var showdown = new Showdown.converter();
+
+Ember.Handlebars.helper('markdown', function(input) {
+  return new Handlebars.SafeString(showdown.makeHtml(input));
+});
+
 App.Link = Em.Object.extend({
   title: null,
   url: null
@@ -21,6 +46,12 @@ App.ApplicationRoute = Em.Route.extend({
     })];
     
     controller.set('links', links);
+  }
+});
+
+App.IndexRoute = Em.Route.extend({
+  model: function() {
+    return profiles;
   }
 });
 
