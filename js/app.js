@@ -3,6 +3,7 @@ App = Ember.Application.create();
 
 var model = {
   name: "Jan Bobisud",
+  description: "Developer of iOS, OS X and Ember.js apps.",
   email: "me@bobisjan.com",
   city: "Prague",
   profiles: [{
