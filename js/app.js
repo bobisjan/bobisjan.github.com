@@ -29,7 +29,7 @@ var model = {
 
 Ember.Handlebars.helper('mail-to', function(value, options) {
   var escaped = Handlebars.Utils.escapeExpression(value);
-  return new Handlebars.SafeString('<a href="mailto:' + escaped + '">' + escaped + '</a>');
+  return new Handlebars.SafeString('<a href="mailto:' + escaped + '" class="btn btn-primary btn-xs">' + escaped + '</a>');
 });
 
 var showdown = new Showdown.converter();
