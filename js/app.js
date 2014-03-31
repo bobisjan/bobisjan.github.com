@@ -12,12 +12,6 @@ var model = {
     url: "http://fel.cvut.cz",
     logo: "images/cvut.jpg",
     contact: "**Software Engineering**<br>Open Informatics<br>Faculty of Electrical Engineering<br>Czech Technical University in Prague"
-  }, {
-    title: "Junior Software Engineer",
-    email: "jan.bobisud@capgemini.com",
-    url: "http://cz.capgemini.com",
-    logo: "images/capgemini.jpg",
-    contact: "**Capgemini Czech Republic s.r.o.**<br>Evropska 2588/33a<br>160 00 Praha<br>Czech Republic"
   }],
   links: [{
     title: "GitHub",
