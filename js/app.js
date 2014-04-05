@@ -22,6 +22,8 @@ var model = {
   }]
 };
 
+// Template helpers
+
 Ember.Handlebars.helper('mail-to', function(value, options) {
   var escaped = Handlebars.Utils.escapeExpression(value);
   return new Handlebars.SafeString('<a href="mailto:' + escaped + '" class="btn btn-primary btn-xs">' + escaped + '</a>');
@@ -38,17 +40,9 @@ Ember.Handlebars.helper('year', function() {
   return now.getFullYear();
 });
 
-App.Router.map(function() {
-
-});
+// Routes
 
 App.ApplicationRoute = Em.Route.extend({
-  model: function() {
-    return model;
-  }
-});
-
-App.IndexRoute = Em.Route.extend({
   model: function() {
     return model;
   }
